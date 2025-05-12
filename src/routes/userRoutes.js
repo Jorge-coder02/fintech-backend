@@ -14,6 +14,7 @@ router.get("/info", infoUser);
 
 // POST
 router.post("/register", validateUser, createUser);
-router.post("/login", validateLogin, loginUser);
+// router.post("/login", validateLogin, loginUser);
+router.post("/login", loginUser);
 
 module.exports = router;
