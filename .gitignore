@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+.env.local
+
+# Logs y archivos de desarrollo
+*.log
+.DS_Store
+npm-debug.log*
+
+# MongoDB
+/data/db/  # Si usas MongoDB local
+*.mongodump
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+
+# Archivos del sistema
+Thumbs.db
