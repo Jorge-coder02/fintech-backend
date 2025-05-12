@@ -9,6 +9,12 @@ const app = express();
 
 // Middlewares
 app.use(cors());
+app.use(
+  cors({
+    origin: "https://growbit.netlify.app/",
+    credentials: true, // Permite cookies
+  })
+);
 app.use(express.json());
 
 // Rutas
