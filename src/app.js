@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(
   cors({
-    origin: "https://growbit.netlify.app/",
+    origin: "https://growbit.netlify.app",
     credentials: true, // Permite cookies
   })
 );
