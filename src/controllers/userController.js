@@ -67,7 +67,7 @@ exports.loginUser = async (req, res) => {
     // ✅ Bien
     else {
       const token = "tokenJWT"; // Aquí generar un token JWT real
-      res.status(201).json({ success: true, data: token });
+      res.status(201).json({ success: true, data: { token: token } });
     }
   } catch (error) {
     res.status(400).json({ success: false, error: error.message });
