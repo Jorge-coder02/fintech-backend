@@ -1,5 +1,6 @@
 const User = require("../models/UserFintech");
-// const axios = require("axios");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 // Info de usuarios
 exports.infoUser = async (req, res) => {
