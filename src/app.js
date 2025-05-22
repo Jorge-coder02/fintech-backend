@@ -8,11 +8,25 @@ const { MONGODB_URI } = process.env;
 const app = express();
 
 // Middlewares
-app.use(cors());
+const allowedOrigins = [
+  "https://growbit.netlify.app",
+  "http://localhost:5174",
+  "http://localhost:3000",
+];
+
 app.use(
   cors({
-    origin: "https://growbit.netlify.app", // Cambia esto por la URL de tu frontend
-    credentials: true, // Permite cookies
+    origin: function (origin, callback) {
+      // Permite solicitudes sin origen (como apps móviles o curl)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = `El origen ${origin} no tiene permiso de acceso.`;
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    credentials: true,
   })
 );
 app.use(express.json());
