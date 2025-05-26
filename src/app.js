@@ -30,7 +30,7 @@ app.use(cors());
 //     credentials: true,
 //   })
 // );
-app.use(express.json());
+app.use(express.json()); // Middleware para parsear JSON
 
 // Rutas
 app.use("/api", userRoutes); // Prefijo para todas las rutas del backend
